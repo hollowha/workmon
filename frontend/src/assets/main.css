@@ -1,0 +1,168 @@
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Reset some basic elements */
+body, h1, h2, h3, p, form, section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anta", sans-serif;
+  font-style: normal;
+}
+
+/* Basic body styling */
+body {
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  line-height: 1.6;
+  color: #333; /* Keeping text color relatively dark for readability */
+  background-color: #FAF3F0; /* Lighter shade of the primary color */
+}
+
+/* Container for centering content */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Grid system */
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Card styling for aesthetic appeal */
+.card {
+  background-color: #fff; /* Keeping cards white for contrast */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #F29D7F; /* Primary color */
+  color: #fff; /* White text */
+  font-weight: bold;
+  padding: 0.5rem 1rem; /* Y and X padding */
+  border-radius: 0.25rem; /* Rounded corners */
+  border: none; /* Remove border */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: background-color 0.2s; /* Smooth transition for background color */
+}
+
+button:hover {
+  background-color: #E8856A; /* Slightly darker shade of primary color for hover */
+}
+
+/* Form input styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc; /* Considering border-color close to primary but subtle */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Enhance visual hierarchy of headings */
+h1, h2, h3 {
+  color: #5D3A2B; /* A darker shade for contrast with the background */
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+/* Style sections for better spacing and readability */
+section {
+  margin-bottom: 20px;
+}
+
+/* Utility classes for text alignment */
+.text-center {
+  text-align: center;
+}
+
+.bg-f29d7f {
+  background-color: #F29D7F;
+}
+
+.text-f29d7f {
+  color: #F29D7F;
+}
+
+.hover\:text-white:hover {
+  color: #ffffff;
+}
+
+.bg-f29d7f {
+  background-color: #F29D7F;
+}
+
+.bg-fab3a5 {
+  background-color: #FAB3A5;
+}
+
+.hover\:bg-e8856a:hover {
+  background-color: #E8856A;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:shadow-outline:focus {
+  box-shadow: 0 0 0 3px rgba(242, 157, 127, 0.5);
+}
+
+.transition {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
+}
