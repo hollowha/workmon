@@ -7,13 +7,15 @@
                     <h2>Login</h2>
                     <form @submit.prevent="login">
                         <FormInput type="email" id="login-email" v-model="loginEmail" label="Email" required />
-                        <FormInput type="password" id="login-password" v-model="loginPassword" label="Password" required />
+                        <FormInput type="password" id="login-password" v-model="loginPassword" label="Password"
+                            required />
                         <button type="submit"
                             class="bg-f29d7f hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Login</button>
                     </form>
-                    <div id="google-signin-btn"></div>
+                    <!-- <div id="google-signin-btn"></div> -->
                     <button @click="toSwitchPage"
-                        class="bg-fab3a5 hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Register</button>
+                        class="bg-fab3a5 hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Change
+                        to Register</button>
                 </section>
                 <section v-else>
                     <h2>Register</h2>
@@ -27,9 +29,12 @@
                             class="bg-f29d7f hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Register</button>
                     </form>
                     <button @click="toSwitchPage"
-                        class="bg-fab3a5 hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Login</button>
+                        class="bg-fab3a5 hover:bg-e8856a text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition ease-in duration-150">Change
+                        to Login</button>
                 </section>
             </div>
+
+            <div id="google-signin-btn"></div>
         </main>
         <Footer />
     </div>

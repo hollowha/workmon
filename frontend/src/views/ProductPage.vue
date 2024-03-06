@@ -3,6 +3,11 @@
         <NavBar />
         <main class="container mx-auto">
             <h2 class="text-2xl font-bold my-4">Our Products</h2>
+            <!-- Vue模板中 -->
+            <div id="typing-effect">
+                <span ref="text"></span><span ref="cursor" class="cursor">|</span>
+            </div>
+
             <FormInput type="search" id="product-search" placeholder="Search products..." v-model="searchQuery"
                 aria-label="Search Products" />
             <!-- Image Carousel -->
@@ -102,7 +107,7 @@ export default {
             await fadeIn(); // 等待淡入完成
         },
         startCarousel() {
-            this.intervalId = setInterval(this.changeImageAutomatically, 4500 + 1000); // 每4.5秒加上淡入淡出所需时间切换一次图片
+            this.intervalId = setInterval(this.changeImageAutomatically, 4000 + 1000); // 每4.5秒加上淡入淡出所需时间切换一次图片
         },
         nextImage() {
             this.currentIndex = (this.currentIndex + 1) % this.images.length;
@@ -160,11 +165,32 @@ export default {
                 alert('Failed to add item to cart. Please try again.');
             }
         },
+        hideCursor(element) {
+            element.style.display = 'none'; // Completely hide the cursor
+        },
+        typeWriter(textElement, cursorElement, text) {
+            let i = 0;
+            const type = () => {
+                if (i < text.length) {
+                    textElement.innerHTML += text.charAt(i);
+                    i++;
+                    const speed = Math.random() * (150 - 50) + 50; // Random speed
+                    setTimeout(type, speed);
+                } else {
+                    this.hideCursor(cursorElement); // Hide the cursor after typing is complete
+                }
+            };
+            type();
+        },
+
     },
+
     mounted() {
         this.fetchProducts();
         // this.intervalId = setInterval(this.nextImage, 4000); // Change image every 4 seconds
         this.startCarousel();
+        const text = "Select your favorite Workmon to become your slave!";
+        this.typeWriter(this.$refs.text, this.$refs.cursor, text);
     },
 
 };
@@ -248,9 +274,23 @@ export default {
     background-color: #0056b3;
 }
 
-/* Your existing .slide-* classes */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: #070707;
+    margin-left: 2px;
+    animation: blink 0.7s steps(1) infinite;
+}
 
+@keyframes blink {
 
-/* Fade transitions */
-/* Transition classes for fading */
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
 </style>

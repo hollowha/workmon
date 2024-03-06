@@ -2,32 +2,33 @@
     <nav class="bg-f29d7f text-white py-1 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Replace this line -->
-            <router-link to="/" class="text-xl font-bold hover:text-white">
-                <img src="@/assets/logo.png" alt="Logo" style="height: 70px; width: auto;"> <!-- Adjust height as needed -->
+            <router-link to="/" class="text-xl font-bold hover:text-black">
+                <img src="@/assets/logo5.png" alt="Logo" style="height: 70px; width: auto;">
+                <!-- Adjust height as needed -->
             </router-link>
             <!-- The rest of your code remains unchanged -->
             <keep-alive>
                 <ul class="flex space-x-4">
                     <!-- <li><router-link to="/products" class="hover:text-white">Products</router-link></li> -->
-                    <li v-if="!isAuthenticated"><router-link to="/login" class="hover:text-white">Login /
+                    <li v-if="!isAuthenticated"><router-link to="/login" class="hover:text-black">Login /
                             Register</router-link></li>
                     <li v-else class="relative flex space-x-4">
-                        <router-link to="/profile" class="hover:text-white">Profile</router-link>
+                        <router-link to="/profile" class="hover:text-black">Profile</router-link>
                         <div @mouseover="showCartPreview = true" @mouseleave="showCartPreview = false">
-                            <router-link to="/cart" class="hover:text-white">Cart</router-link>
+                            <router-link to="/cart" class="hover:text-black">Cart</router-link>
                             <div v-if="showCartPreview"
-                                class="cart-preview absolute bg-f29d7f bg-opacity-80 mt-1 p-2 rounded shadow-lg max-w-lg overflow-auto text-white">
+                                class="cart-preview absolute bg-f29d7f bg-opacity-80 mt-1 p-2 rounded shadow-lg max-w-lg overflow-auto text-black">
                                 <div v-for="item in cartItems" :key="item.id" class="flex items-center">
                                     <img :src="getImageUrl(item.productId)" alt="Product image"
                                         class="h-16 w-16 object-cover mr-2">
                                     <div>
-                                        <span>{{ item.name }}</span>
+                                        <span class="text-white">{{ item.name }}</span>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <router-link to="/cart" class="hover:text-white" @click="logout">Log Out</router-link>
+                        <router-link to="/cart" class="hover:text-black" @click="logout">Log Out</router-link>
                     </li>
                 </ul>
             </keep-alive>
@@ -137,4 +138,3 @@ export default {
     text-overflow: ellipsis;
 }
 </style>
-  
